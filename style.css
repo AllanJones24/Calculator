@@ -1,0 +1,69 @@
+body {
+display: flex;
+justify-content: center;
+align-items: center;
+}
+
+#box {
+	margin: 0;
+	width: 300px;
+	border-radius: 20px;
+	height: 600px;
+	background-color: #000;
+	display: flex;
+	flex-direction: column;
+}
+
+#resultBox {
+	height: 200px;
+	background-color: #000;
+	color: white;
+	font-size: 65px;
+	display: flex;
+	justify-content: flex-end;
+	align-items: flex-end;
+	padding-right: 20px;
+	padding-bottom: 10px;
+	
+}
+
+#result {
+background-color: #000;
+}
+
+#btnBox {
+background-color: #000;
+height: 340px;
+display: flex;
+flex-wrap: wrap;
+justify-content: space-around;
+gap: 6px;
+padding-left: 6px;
+padding-right: 6px;
+}
+
+.btn {
+	width: 60px;
+	height: 60px;
+	border-radius: 30px;
+	background-color: rgb(65, 61, 61);
+	color: white;
+	font-size: 30px;
+	text-align: center;
+	line-height: 60px;
+}
+
+#zero {
+	width: 140px;
+	border-radius: 30px;
+	background-color: rgb(65, 61, 61);
+}
+
+#clear, #plusMinus, #percent {
+	background-color: lightgrey;
+	color: black;
+}
+
+#divide, #multiply, #minus, #plus, #equal {
+	background-color: orange;
+}
