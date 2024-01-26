@@ -50,6 +50,7 @@ const display = () => {
         if (isEqualsClicked) {
           // If equals was clicked previously, start a new calculation
           firstNum = btn.textContent;
+          secondNum = "";
           isEqualsClicked = false;
         } else if (operator === "") {
           firstNum += btn.textContent;
@@ -57,15 +58,27 @@ const display = () => {
           secondNum += btn.textContent;
         }
         result.textContent = operator === "" ? firstNum : secondNum;
+        console.log(firstNum);
+        console.log(secondNum);
       } else if (btn.classList.contains("operator")) {
         if (!isEqualsClicked) {
           operator = btn.textContent;
           isOperatorClicked = true;
+        } else {
+          operator = btn.textContent;
+          isOperatorClicked = true;
+          isEqualsClicked = false;
+          firstNum = result.textContent;
+          secondNum = "";
         }
       } else if (btn.id === "equals") {
         if (isOperatorClicked && secondNum !== "") {
           resultNum = operate(Number(firstNum), Number(secondNum), operator);
           result.textContent = resultNum;
+          firstNum = resultNum.toString(); // Set result as the new firstNum
+          console.log("new firstNum" + firstNum);
+          secondNum = "";
+          operator = "";
           isEqualsClicked = true;
           isOperatorClicked = false;
           console.log(resultNum);
