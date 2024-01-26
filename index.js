@@ -62,6 +62,13 @@ const display = () => {
         console.log(secondNum);
       } else if (btn.classList.contains("operator")) {
         if (!isEqualsClicked) {
+          if (secondNum !== "") {
+            // Perform the calculation using existing firstNum, secondNum, and operator
+            resultNum = operate(Number(firstNum), Number(secondNum), operator);
+            result.textContent = resultNum;
+            firstNum = resultNum.toString(); // Set result as the new firstNum
+            secondNum = ""; // Reset secondNum for the new calculation
+          }
           operator = btn.textContent;
           isOperatorClicked = true;
         } else {
